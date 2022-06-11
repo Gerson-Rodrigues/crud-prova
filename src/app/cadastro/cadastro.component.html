@@ -1,0 +1,86 @@
+<div class="body">
+<h4><strong><i class="p-2 text-dark bg-opacity-25">Cadastro Profissional</i></strong></h4>
+<form [formGroup]="formCadastro" (ngSubmit)="onSubmit()">
+  <div *ngIf="mensagem" class="mb-3 alert alert-primary">
+    <strong>{{ mensagem }}</strong>
+    </div>
+  <div class="row mb-3">
+    <!--mb margem inferior -->
+    <div class="col-md-6">
+      <!-- 6 colunas-->
+      <label>Nome:</label>
+      <input type="text" class="form-control" formControlName="nome" />
+      <div class="text-danger" *ngIf="form.nome.touched && form.nome.invalid">
+        <span *ngIf="form.nome.errors.required">
+          Por favor insira um nome.
+        </span>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <!-- 6 colunas-->
+      <label> CPF</label>
+      <input type="text" class="form-control" formControlName="cpf" />
+      <div class="text-danger" *ngIf="form.cpf.touched && form.cpf.invalid">
+        <span *ngIf="form.cpf.errors.required">
+          Por favor, insira um Cpf.
+        </span>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <!-- 6 colunas-->
+      <label>Telefone</label>
+      <input type="text" class="form-control" formControlName="telefone" />
+      <div
+        class="text-danger"
+        *ngIf="form.telefone.touched && form.telefone.invalid"
+      >
+        <span *ngIf="form.telefone.errors.required">
+          Coloque um telefone Profissional.
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <!-- 6 colunas-->
+      <label>Email</label>
+      <input type="text" class="form-control" formControlName="email" />
+      <div
+        class="text-danger"
+        *ngIf="form.email.touched && form.email.invalid"
+      >
+        <span *ngIf="form.email.errors.required">
+          Coloque um Email Profissional.
+        </span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label>Observação</label>
+      <input type="text" class="form-control" formControlName="observacao" />
+      <div
+        class="text-danger"
+        *ngIf="form.observacao.touched && form.observacao.invalid">
+        <span *ngIf="form.observacao.errors.required">
+          Insira alguma observação.
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-12">
+      <tr><strong><td></td></strong></tr>
+    </div>
+  </div>
+
+
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <input
+      type="submit"
+      [disabled]="!formCadastro.valid"
+      class="btn btn-outline-primary"
+      value="Realizar Cadastro"/>
+  </div>
+</div>
+</form>

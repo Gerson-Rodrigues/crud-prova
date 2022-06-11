@@ -1,0 +1,73 @@
+<h4><strong>Edição Profissional</strong></h4>
+<p><strong>Utilize os campos para alterar os dados de um Proffisional</strong></p>
+
+<form [formGroup]="formEdicao" (ngSubmit)="onEdit()">
+
+  <div *ngIf="mensagem" class="mb-3 alert alert-outline-primary opacity-100">
+    <strong>{{ mensagem }}</strong></div>
+
+    <div class="row mb-3">
+    <div class="col-md-2"><label>Identificador</label>
+      <input type="text" formControlName="id" readonly/></div>
+    </div>
+    <div class="row mb-3">
+    <div class="col-md-3">
+      <label>Nome do ProProfissional</label>
+      <input type="text" class="form-control" formControlName="nome" />
+      <div class="text-danger" *ngIf="form.nome.touched && form.nome.invalid">
+        <span *ngIf="form.nome.errors.required">
+          Por favor insira o nome.
+        </span>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label>CPF</label>
+      <input type="text" class="form-control" formControlName="cpf" />
+      <div class="text-danger" *ngIf="form.cpf.touched && form.cpf.invalid">
+        <span *ngIf="form.cpf.errors.required">
+          Por favor insira o CPF.
+        </span>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label>Email</label>
+      <input type="text" class="form-control" formControlName="email" />
+      <div class="text-danger" *ngIf="form.email.touched && form.email.invalid">
+        <span *ngIf="form.email.errors.required">
+          Por favor, insira um email do profissional.
+        </span>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label>Telefone</label>
+      <input type="text" class="form-control" formControlName="telefone" />
+      <div class="text-danger" *ngIf="form.telefone.touched && form.telefone.invalid">
+        <span *ngIf="form.telefone.errors.required">
+          Coloque um telefone.
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-12">
+      <label>Observação Profissional</label>
+      <input type="text" class="form-control" formControlName="observacao" />
+      <div class="text-danger" *ngIf="form.observacao.touched && form.observacao.invalid">
+        <span *ngIf="form.observacao.errors.required">
+          Insira alguma observação.
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-12">
+      <input
+        type="submit"
+        [disabled]="!formEdicao.valid"
+        class="btn btn-outline-success"
+        value="Atualizar" />
+    </div>
+  </div>
+
+</form>
