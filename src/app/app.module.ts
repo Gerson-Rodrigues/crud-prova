@@ -16,7 +16,7 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   {path: 'consulta', component: ConsultaComponent},
   {path: 'cadastro', component: CadastroComponent},
-  {path: 'edicao', component: EdicaoComponent},
+  {path: 'edicao/:id', component: EdicaoComponent},
   {path: 'account', component: AccountComponent},
   {path: 'login', component: LoginComponent}
 ]
@@ -37,7 +37,7 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    OrderModule 
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

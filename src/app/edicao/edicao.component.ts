@@ -29,7 +29,7 @@ export class EdicaoComponent implements OnInit {
     cpf: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
     telefone: new FormControl('', [Validators.required]),
-    descricao: new FormControl('', [Validators.required]),
+    observacao: new FormControl('', [Validators.required]),
   });
 
   get form(): any {
@@ -37,9 +37,8 @@ export class EdicaoComponent implements OnInit {
   }
 
   onEdit(): void {
-    this.httpClient.put(environment.apiUrl + '/profissionais', this.formEdicao.value,{responseType:'text'}).subscribe(data => {
+    this.httpClient.put(environment.apiUrl+'/profissionais', this.formEdicao.value,{responseType:'text'}).subscribe(data => {
       this.mensagem = data;
-
     },
     e =>{
       this.mensagem = " Ocorreu um erro ao tentar editar o profissional";

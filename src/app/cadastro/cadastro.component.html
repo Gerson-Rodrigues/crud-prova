@@ -1,9 +1,9 @@
-<div class="body">
+
 <h4><strong><i class="p-2 text-dark bg-opacity-25">Cadastro Profissional</i></strong></h4>
-<form [formGroup]="formCadastro" (ngSubmit)="onSubmit()">
+<form [formGroup]="formCadastro" (ngSubmit)="onSubmit()" class="body">
   <div *ngIf="mensagem" class="mb-3 alert alert-primary">
     <strong>{{ mensagem }}</strong>
-    </div>
+  </div>
   <div class="row mb-3">
     <!--mb margem inferior -->
     <div class="col-md-6">
@@ -71,16 +71,13 @@
       <tr><strong><td></td></strong></tr>
     </div>
   </div>
-
-
-
-<div class="row mb-3">
-  <div class="col-md-12">
-    <input
-      type="submit"
-      [disabled]="!formCadastro.valid"
-      class="btn btn-outline-primary"
-      value="Realizar Cadastro"/>
+  <div class="row mb-3">
+    <div class="col-md-12">
+      <input
+        type="submit"
+        [disabled]="!formCadastro.valid"
+        class="btn btn-outline-primary"
+        value="Realizar Cadastro"/>
+    </div>
   </div>
-</div>
 </form>

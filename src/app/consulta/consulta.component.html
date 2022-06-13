@@ -1,36 +1,37 @@
 <div class="body">
-<h4><strong>Consulta de Profissionais</strong></h4>
-<Strong><p>Lista de Profissionais Cadastrados</p></Strong>
+  <h4><strong>Consulta de Profissionais</strong></h4>
+  <Strong><p>Lista de Profissionais Cadastrados</p></Strong>
 
-<table class="table table-over table-sm">
-  <thead>
-    <tr>
-      <td>Nome
-      <td>CPF</td>
-      <td>Email</td>
-      <td>Telefone</td>
-      <td>Observação</td>
-      <td>Operação</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let p of pro">
+  <table class="table table-over table-sm">
+    <thead>
+      <tr>
 
-      <td>{{p.nome}}</td>
-      <td>{{p.cpf}}</td>
-      <td>{{p.email}}</td>
-      <td>{{p.telefone}}</td>
-      <td>{{p.observacao}}</td>
-      <td>
-        <button class="btn btn-outline-success p-2 opacity-100" [routerLink]="['edicao', p.id]">Editar</button>
-        <button class="btn btn-outline-danger p-2 opacity-100" (click)="excluir(p.id)">Excluir</button>
-      </td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td colspan="6">Total de Registros: {{pro.length}}</td>
-    </tr>
-  </tfoot>
-</table>
+        <td>Nome</td>
+        <td>CPF</td>
+        <td>Email</td>
+        <td>Telefone</td>
+        <td>Observação</td>
+        <td>Operação</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of pro">
+
+        <td>{{p.nome}}</td>
+        <td>{{p.cpf}}</td>
+        <td>{{p.email}}</td>
+        <td>{{p.telefone}}</td>
+        <td>{{p.observacao}}</td>
+        <td>
+          <button class="btn btn-outline-success p-2 opacity-100" [routerLink]="['/edicao',p.id]">Editar</button>
+          <button class="btn btn-outline-danger p-2 opacity-100" (click)="excluir(p.id)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6">Total de Registros: {{pro.length}}</td>
+      </tr>
+    </tfoot>
+  </table>
 </div>

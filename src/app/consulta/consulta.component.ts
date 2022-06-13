@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -23,7 +24,7 @@ export class ConsultaComponent implements OnInit {
   }//fecha o método onInit
 
   //função pra fazer a exclusão do produto na API
-
+ 
   excluir(id:number):void {
     if(window.confirm('Deseja realmente excluir o cadastro selecionado???')){
       this.httpClient.delete(environment.apiUrl+'/profissionais/'+id,
