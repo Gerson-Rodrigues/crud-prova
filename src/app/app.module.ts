@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { OrderModule } from 'ngx-order-pipe';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
     ConsultaComponent,
     EdicaoComponent,
     CadastroComponent
+
   ],
   imports: [
     BrowserModule,
