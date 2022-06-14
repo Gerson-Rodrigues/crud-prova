@@ -18,10 +18,9 @@ export class CadastroComponent implements OnInit {
   //montando a estrutura do formulario
   formCadastro = new FormGroup({
     nome: new FormControl('', [Validators.required]),
-    cpf: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required]),
+    crm: new FormControl('', [Validators.required]),
     telefone: new FormControl('', [Validators.required]),
-    observacao: new FormControl('', [Validators.required]),
+    tipo: new FormControl('', [Validators.required]),
   });
   //acessando o formulário/campos na página HTML
   get form(): any {
@@ -30,7 +29,7 @@ export class CadastroComponent implements OnInit {
   //função para fazer a chamada do cadastro na API
   onSubmit(): void {
     this.httpClient
-      .post(environment.apiUrl+'/profissionais', this.formCadastro.value, {
+      .post(environment.apiUrl+'/medicos', this.formCadastro.value, {
         responseType: 'text',
       })
       .subscribe(

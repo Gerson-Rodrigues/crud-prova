@@ -1,24 +1,21 @@
-<h1><i class="text-bg-warning opacity-50">|    Olá, Gerson Rodrigues     |</i></h1>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
   <div class="container-fluid">
-    <a class="navbar-brand " href="#">Barra de Navegação</a>
+    <a class="navbar-brand text-dark" href="/src/app/app.component.html"><strong>Home</strong></a>
     <button class="navbar-toggler bg-warning p-2 text-dark bg-opacity-25" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" [routerLink]="['/account']"><strong>Autenticar Usuário</strong></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/Gerson-Rodrigues/crud-profissional">Meu GitHub</a>
+          <a class="nav-link text-dark" href="https://github.com/Gerson-Rodrigues/"><strong><i> Meu GitHub</i></strong></a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Gerenciar Profissionais</a>
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><strong>Gerenciar Processos</strong></a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" routerLink="cadastro"><div class="bg-success p-2 text-dark bg-opacity-25">Cadastrar</div></a></li>
+            <li><a class="dropdown-item" routerLink="cadastro"><div class="bg-success p-2 text-dark bg-opacity-25"><strong>Cadastrar</strong></div></a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" routerLink="consulta"><div class="bg-secondary p-2 text-dark bg-opacity-25">Consultar</div></a></li>
+            <li><a class="dropdown-item" routerLink="consulta"><div class="bg-secondary p-2 text-dark bg-opacity-25"><strong>Consultar</strong></div></a></li>
 
           </ul>
         </li>
@@ -26,12 +23,14 @@
     </div>
   </div>
 </nav>
+<body class="box2">
 
+</body>
 
 <!--Local para exibir o conteúdo das páginas-->
 <div class="container mt-3" >
   <div class="card" >
-    <div class="card-body" >
+    <div class="box" >
       <router-outlet></router-outlet>
     </div>
   </div>

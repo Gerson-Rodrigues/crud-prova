@@ -1,83 +1,67 @@
 
-<h4><strong><i class="p-2 text-dark bg-opacity-25">Cadastro Profissional</i></strong></h4>
+<h4><strong><i class="p-2 text-light bg-opacity-25">Cadastro de um Novo Médico</i></strong></h4>
 <form [formGroup]="formCadastro" (ngSubmit)="onSubmit()" class="body">
+  <div class="row mb-3"></div>
+  <div class="row mb-3"></div>
+
   <div *ngIf="mensagem" class="mb-3 alert alert-primary">
     <strong>{{ mensagem }}</strong>
   </div>
   <div class="row mb-3">
-    <!--mb margem inferior -->
-    <div class="col-md-6">
-      <!-- 6 colunas-->
-      <label>Nome:</label>
+    <div class="col-md-1"></div>
+
+    <div class="col-md-5">
+      <label><strong>Nome do Médico</strong></label>
       <input type="text" class="form-control" formControlName="nome" />
       <div class="text-danger" *ngIf="form.nome.touched && form.nome.invalid">
         <span *ngIf="form.nome.errors.required">
-          Por favor insira um nome.
+          <strong> Por favor insira um nome.</strong>
         </span>
       </div>
     </div>
-    <div class="col-md-3">
-      <!-- 6 colunas-->
-      <label> CPF</label>
-      <input type="text" class="form-control" formControlName="cpf" />
-      <div class="text-danger" *ngIf="form.cpf.touched && form.cpf.invalid">
-        <span *ngIf="form.cpf.errors.required">
-          Por favor, insira um Cpf.
-        </span>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <!-- 6 colunas-->
-      <label>Telefone</label>
-      <input type="text" class="form-control" formControlName="telefone" />
-      <div
-        class="text-danger"
-        *ngIf="form.telefone.touched && form.telefone.invalid"
-      >
-        <span *ngIf="form.telefone.errors.required">
-          Coloque um telefone Profissional.
-        </span>
+    <div class="col-md-5">
+      <label> <strong>Crm</strong></label>
+      <input type="text" class="form-control" formControlName="crm" maxlength="11"/>
+      <div class="text-danger" *ngIf="form.crm.touched && form.crm.invalid" length="11">
+        <span *ngIf="form.crm.errors.required">
+         <strong> Por favor, insira um CRM.</strong></span>
+
       </div>
     </div>
   </div>
   <div class="row mb-3">
-    <div class="col-md-6">
-      <!-- 6 colunas-->
-      <label>Email</label>
-      <input type="text" class="form-control" formControlName="email" />
-      <div
-        class="text-danger"
-        *ngIf="form.email.touched && form.email.invalid"
-      >
-        <span *ngIf="form.email.errors.required">
-          Coloque um Email Profissional.
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
+      <label><strong>Tel p/ Contato</strong></label>
+      <input type="text" class="form-control" formControlName="telefone" placeholder="(00)00000-0000"/>
+      <div class="text-danger" *ngIf="form.telefone.touched && form.telefone.invalid"
+      > <span *ngIf="form.telefone.errors.required">
+         <strong>Coloque um telefone para registro.</strong>
         </span>
       </div>
     </div>
-    <div class="col-md-6">
-      <label>Observação</label>
-      <input type="text" class="form-control" formControlName="observacao" />
-      <div
-        class="text-danger"
-        *ngIf="form.observacao.touched && form.observacao.invalid">
-        <span *ngIf="form.observacao.errors.required">
-          Insira alguma observação.
+    <div class="col-md-5">
+      <label><strong>Tipo</strong></label>
+      <input type="text" class="form-control" formControlName="tipo" />
+      <div class="text-danger"
+        *ngIf="form.tipo.touched && form.tipo.invalid">
+        <span *ngIf="form.tipo.errors.required">
+         <strong> Digite uma especialização.</strong>
         </span>
       </div>
     </div>
   </div>
-  <div class="row mb-3">
-    <div class="col-md-12">
-      <tr><strong><td></td></strong></tr>
-    </div>
+  <div class="row mb-3"></div>
+  <div class="row mb-3"></div>
+
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <input
+      type="submit"
+      [disabled]="!formCadastro.valid"
+      class="btn btn-primary"
+      value="Realizar Cadastro"/>
   </div>
-  <div class="row mb-3">
-    <div class="col-md-12">
-      <input
-        type="submit"
-        [disabled]="!formCadastro.valid"
-        class="btn btn-outline-primary"
-        value="Realizar Cadastro"/>
-    </div>
-  </div>
+</div>
 </form>
