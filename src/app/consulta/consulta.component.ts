@@ -24,9 +24,9 @@ export class ConsultaComponent implements OnInit {
 
   //função pra fazer a exclusão do produto na API
 
-  excluir(id:number):void {
+  excluir(id_medico:number):void {
     if(window.confirm('Deseja realmente excluir o cadastro selecionado???')){
-      this.httpClient.delete(environment.apiUrl+'/medicos/'+id,
+      this.httpClient.delete(environment.apiUrl+"/medicos/"+id_medico,
       {responseType: 'text'}).subscribe((data)=> {
         alert (data);      //exibir mensagem em uma janela popup
         this.ngOnInit();   //recarregar a consulta de produtos

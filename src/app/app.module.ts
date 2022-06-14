@@ -14,7 +14,7 @@ import { EdicaoComponent } from './edicao/edicao.component';
 const routes: Routes = [
   {path: 'consulta', component: ConsultaComponent},
   {path: 'cadastro', component: CadastroComponent},
-  {path: 'edicao/:id', component: EdicaoComponent}
+  {path: 'edicao/:id_medico', component: EdicaoComponent}
 ]
 
 @NgModule({

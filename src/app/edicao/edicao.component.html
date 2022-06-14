@@ -5,16 +5,18 @@
 <h5><strong class="text-bg-light">Utilize os campos para alterar os dados de um Paciente</strong></h5>
 &nbsp;
   <div *ngIf="mensagem" class="mb-3 alert alert-outline-primary opacity-100">
-    <strong>{{ mensagem }}</strong></div>
-
+    <strong class="bg-warning text-light opacity-75">{{ mensagem }}</strong></div>
+    <div class="row mb-3">
+    <input type="hidden" formControlName="id_medico">
+    </div>
     <div class="row mb-3">
       <div class="col-md-1"></div>
 
       <div class="col-md-5">
         <label class="text-bg-light"><strong>Nome do Médico</strong></label>
         <input type="text" class="form-control" formControlName="nome" />
-        <div class="text-danger" *ngIf="form.nome.touched && form.nome.invalid">
-          <span *ngIf="form.nome.errors.required" class="text-bg-light">
+        <div class="text-bg-danger text-light" *ngIf="form.nome.touched && form.nome.invalid">
+          <span *ngIf="form.nome.errors.required">
             Por favor insira um nome.
           </span>
         </div>
@@ -22,8 +24,8 @@
       <div class="col-md-5">
         <label class="text-bg-light"> <strong>Crm</strong> </label>
         <input type="text" class="form-control" formControlName="crm" maxlength="11"/>
-        <div class="text-danger" *ngIf="form.crm.touched && form.crm.invalid" length="11">
-          <span *ngIf="form.crm.errors.required" class="text-bg-light">
+        <div class="text-bg-danger text-light" *ngIf="form.crm.touched && form.crm.invalid" length="11">
+          <span *ngIf="form.crm.errors.required">
             Por favor, insira um CRM.</span>
 
         </div>
@@ -34,8 +36,8 @@
       <div class="col-md-5">
         <label class="text-bg-light"><strong>Tel p/ Contato</strong></label>
         <input type="text" class="form-control" formControlName="telefone" />
-        <div class="text-danger" *ngIf="form.telefone.touched && form.telefone.invalid"
-        > <span *ngIf="form.telefone.errors.required" class="text-bg-light">
+        <div class="text-bg-danger text-light" *ngIf="form.telefone.touched && form.telefone.invalid"
+        > <span *ngIf="form.telefone.errors.required">
             Coloque um telefone para registro.
           </span>
         </div>
@@ -43,9 +45,9 @@
       <div class="col-md-5">
         <label class="text-bg-light"><strong>Tipo</strong></label>
         <input type="text" class="form-control" formControlName="tipo" />
-        <div class="text-danger"
+        <div class="text-bg-danger text-light"
           *ngIf="form.tipo.touched && form.tipo.invalid">
-          <span *ngIf="form.tipo.errors.required" class="text-bg-light">
+          <span *ngIf="form.tipo.errors.required" >
             Digite uma especialização.
           </span>
         </div>

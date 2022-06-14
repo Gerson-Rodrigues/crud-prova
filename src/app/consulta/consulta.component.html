@@ -23,8 +23,8 @@
         <td>{{p.telefone}}</td>
         <td>{{p.tipo}}</td>
         <td>
-          <button class="btn btn-outline-success p-2 opacity-100" [routerLink]="['/edicao',p.id_paciente]">Editar</button>&nbsp;
-          <button class="btn btn-outline-danger p-2 opacity-100" (click)="excluir(p.id)">Excluir</button>
+          <button class="btn btn-outline-success p-2 opacity-100" [routerLink]="['/edicao',p.id_medico]">Editar</button>&nbsp;
+          <button class="btn btn-outline-danger p-2 opacity-100" (click)="excluir(p.id_medico)">Excluir</button>
         </td>
       </tr>
     </tbody>
