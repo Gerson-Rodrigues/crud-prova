@@ -17,7 +17,7 @@ export class EdicaoComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.paramMap.get('id_medico') as string;
-    this.httpClient.get(environment.apiUrl+'/medicos/'+id).subscribe(
+    this.httpClient.get(environment.url+'/medicos/'+id).subscribe(
       (data:any) => {this.formEdicao.patchValue(data);},
       (e)=>{ console.log(e);});
   }
@@ -36,7 +36,7 @@ export class EdicaoComponent implements OnInit {
   }
 
   onEdit(): void {
-    this.httpClient.put(environment.apiUrl+'/medicos', this.formEdicao.value,{responseType:'text'}).subscribe(data => {
+    this.httpClient.put(environment.url+'/medicos', this.formEdicao.value,{responseType:'text'}).subscribe(data => {
       this.mensagem = data;
       this.formEdicao.reset();
     },

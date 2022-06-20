@@ -1,7 +1,8 @@
-<h4><strong  class="text-bg-info text-dark">Edição de Cadastro</strong></h4>
-
 
 <form [formGroup]="formEdicao" (ngSubmit)="onEdit()" class="body">
+<h3><strong  class="text-dark">Edição de Cadastro</strong></h3>
+
+
 <h5><strong>Utilize os campos para alterar os dados de um Paciente</strong></h5>
 &nbsp;
   <div *ngIf="mensagem" class="mb-3 alert alert-outline-primary opacity-100">
@@ -64,6 +65,8 @@
         [disabled]="!formEdicao.valid"
         class="btn btn-success"
         value="Atualizar Dados"/>
+
+        <a class="offset-9" type="button" [routerLink]="['/edicao']">Voltar</a>
     </div>
   </div>
- </form>
+</form>

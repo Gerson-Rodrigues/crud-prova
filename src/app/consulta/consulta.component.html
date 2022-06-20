@@ -1,46 +1,44 @@
-<h3>
-  <strong class="text-dark"> Consulta de Médicos </strong>
-</h3>
-<div class="body">
-  &nbsp;
-  <h4><strong>Lista de Médicos Cadastrados</strong></h4>
+  <div class="body"> <h4><strong><i class="text-dark">Consulta de Médicos </i></strong></h4>
+  <hr>
 
-  <table class="table table-over table-sm">
-    <thead>
-      <tr>
-        <td><strong>Nome</strong></td>
-        <td><strong>CRM</strong></td>
-        <td><strong>Telefone</strong></td>
-        <td><strong>Tipo</strong></td>
-        <td><strong>Ações</strong></td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let p of registro">
-        <td><i>{{ p.nome }}</i></td>
-        <td><i>{{ p.crm }}</i></td>
-        <td><i>{{ p.telefone }}</i></td>
-        <td><i>{{ p.tipo }}</i></td>
-        <td>
-          <button
-            class="btn btn-outline-success p-2 opacity-100"
-            [routerLink]="['/edicao', p.id_medico]"
-          >
-            Editar</button
-          >&nbsp;
-          <button
-            class="btn btn-outline-danger p-2 opacity-100"
-            (click)="excluir(p.id_medico)"
-          >
-            Excluir
-          </button>
-        </td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan="5"><strong>Total de Registros: {{ registro.length }}</strong></td>
-      </tr>
-    </tfoot>
-  </table>
+
+    <h5><strong>Lista de Médicos Cadastrados</strong></h5>
+    <hr>
+
+    <table class="table table-over table-sm text-light">
+      <thead>
+        <tr>
+          <td><strong>Nome</strong></td>
+          <td><strong>CRM</strong></td>
+          <td></td>
+          <td><strong>Telefone</strong></td>
+          <td><strong>Tipo</strong></td>
+          <td><strong>Ações</strong></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of registro">
+
+          <td>{{p.nome}}</td>
+          <td>{{p.crm}}</td>
+          <td></td>
+          <td>{{p.telefone}}</td>
+          <td>{{p.tipo}}</td>
+          <td>
+            <button class="btn btn-outline-success p-2 opacity-100" [routerLink]="['/edicao',p.id_medico]">Editar</button>&nbsp;
+            <button class="btn btn-outline-danger p-2 opacity-100" (click)="excluir(p.id_medico)">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="6"><strong>Total de Registros: {{ registro.length }}</strong></td>
+        </tr>
+      </tfoot>
+      <!--Régua da Paginação
+      <div class="card-footer">
+        <pagination-controls (pageChange)="handlePageChange($event)" previousLabel=" Back"
+          nextLabel="Next "></pagination-controls>
+      </div>-->
+    </table>
 </div>

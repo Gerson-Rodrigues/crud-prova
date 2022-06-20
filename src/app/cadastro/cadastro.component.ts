@@ -29,7 +29,7 @@ export class CadastroComponent implements OnInit {
   //função para fazer a chamada do cadastro na API
   onSubmit(): void {
     this.httpClient
-      .post(environment.apiUrl+'/medicos', this.formCadastro.value, {
+      .post(`${environment.url}/medicos`, this.formCadastro.value, {
         responseType: 'text',
       })
       .subscribe(

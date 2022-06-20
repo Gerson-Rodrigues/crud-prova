@@ -1,0 +1,30 @@
+<div class="row mt-5" *ngIf="exibirPg">
+  <div class="row mt-3 body">
+    <div class="col-md-4 offset-3">
+      <h2>Autenticação de Usuário</h2>
+      <hr>
+      <p>Entre com suas credenciais para realizar autenticação</p>
+      <hr>
+      <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" >
+        <label>Entre com seu login: </label>
+        <br/>
+        <input type="text" class="form-control" formControlName="login" placeholder="Digite aqui:"><br/><br/>
+
+        <label>Entre com a sua Senha:</label>
+        <br/>
+        <input type="password" class="form-control" formControlName="senha" placeholder="Digite Aqui"> <br/><br/>
+
+        <div class="d-grid mb-3">
+          <input type="submit" value="Autenticar" class="btn btn-outline-light"
+          [disabled]="!formLogin.valid">
+        </div>
+        <div class="d-grid mb-3">
+          <div *ngIf="menssagem_erro" class="mb-3 alert alert-danger">
+            <strong>{{ menssagem_erro }}</strong>
+          </div>
+        </div>
+        <br/>
+      </form>
+    </div>
+  </div>
+</div>
