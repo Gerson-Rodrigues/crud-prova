@@ -21,27 +21,7 @@ export class ConsultaComponent implements OnInit {
       e => {console.log(e)}
     )
   }//fecha o método onInit
-  geraPdf():void {
-    if(window.confirm('Gerar um PDF?')){
-      this.httpClient.get(environment.url_geradora+'/pdf',
-      {responseType: 'text'}).subscribe((data) => {
-        alert (data);
-        this.ngOnInit();
-      },
-      (e)=>{ console.log(e)})
-    }
-    }
-
-  geraHtml():void {
-    if(window.confirm('Gerar um HTML?')){
-      this.httpClient.get(environment.url_geradora+'/html',
-      {responseType: 'text'}).subscribe((data) => {
-        alert (data);
-        this.ngOnInit();
-      },
-      (e)=>{ console.log(e)})
-    }
-  }
+ 
 
   //função pra fazer a exclusão do produto na API
   excluir(id_medico:number):void {

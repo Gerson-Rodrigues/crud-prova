@@ -22,7 +22,27 @@ constructor(private httpClient: HttpClient) { }
       this.loginUsuario = localStorage.getItem("login_usuario");
     }
   }
+  geraPdf():void {
+    if(window.confirm('Gerar um PDF?')){
+      this.httpClient.get(environment.url_geradora+'/pdf',
+      {responseType: 'text'}).subscribe((data) => {
+        alert (data);
+        this.ngOnInit();
+      },
+      (e)=>{ console.log(e)})
+    }
+    }
 
+  geraHtml():void {
+    if(window.confirm('Gerar um HTML?')){
+      this.httpClient.get(environment.url_geradora+'/html',
+      {responseType: 'text'}).subscribe((data) => {
+        alert (data);
+        this.ngOnInit();
+      },
+      (e)=>{ console.log(e)})
+    }
+  }
 //função para fazer o logout do ususario...
 logout():void{
   if(window.confirm('Deseja realmente sair do sistema?')){
