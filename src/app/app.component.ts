@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +12,8 @@ export class AppComponent implements OnInit{
   //atributos
 isAuthenticated: boolean = false;
 loginUsuario: String | null = '';
+
+constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
     this.isAuthenticated = localStorage.getItem("access_token")!= null &&

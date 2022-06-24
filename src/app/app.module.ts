@@ -12,6 +12,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { ConsultaComponent } from './consulta/consulta.component';
 import { EdicaoComponent } from './edicao/edicao.component';
 import { LoginComponent } from './login/login.component';
+import { environment } from 'src/environments/environment';
 
 
 const routes: Routes = [
@@ -19,7 +20,7 @@ const routes: Routes = [
   {path: 'cadastro', component: CadastroComponent},
   {path: 'edicao/:id_medico', component: EdicaoComponent},
   {path: 'account', component: AccountComponent},
-  {path: '', component: LoginComponent}
+  {path: '', component: LoginComponent},
 ]
 
 @NgModule({
