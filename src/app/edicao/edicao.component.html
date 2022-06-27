@@ -14,7 +14,7 @@
       <div class="col-md-1"></div>
 
       <div class="col-md-5">
-        <label class="text-bg-light"><strong>Nome do Médico</strong></label>
+        <label class="text-light"><strong>Nome do Médico</strong></label>
         <input type="text" class="form-control" formControlName="nome" />
         <div class="text-bg-danger text-light" *ngIf="form.nome.touched && form.nome.invalid">
           <span *ngIf="form.nome.errors.required">
@@ -23,19 +23,18 @@
         </div>
       </div>
       <div class="col-md-5">
-        <label class="text-bg-light"> <strong>Crm</strong> </label>
+        <label class="text-light"> <strong>Crm</strong> </label>
         <input type="text" class="form-control" formControlName="crm" maxlength="11"/>
         <div class="text-bg-danger text-light" *ngIf="form.crm.touched && form.crm.invalid" length="11">
           <span *ngIf="form.crm.errors.required">
             Por favor, insira um CRM.</span>
-
         </div>
       </div>
     </div>
     <div class="row mb-3">
       <div class="col-md-1"></div>
       <div class="col-md-5">
-        <label class="text-bg-light"><strong>Tel p/ Contato</strong></label>
+        <label class="text-light"><strong>Tel p/ Contato</strong></label>
         <input type="text" class="form-control" formControlName="telefone" />
         <div class="text-bg-danger text-light" *ngIf="form.telefone.touched && form.telefone.invalid"
         > <span *ngIf="form.telefone.errors.required">
@@ -44,7 +43,7 @@
         </div>
       </div>
       <div class="col-md-5">
-        <label class="text-bg-light"><strong>Tipo</strong></label>
+        <label class="text-light"><strong>Tipo</strong></label>
         <input type="text" class="form-control" formControlName="tipo" />
         <div class="text-bg-danger text-light"
           *ngIf="form.tipo.touched && form.tipo.invalid">
@@ -66,7 +65,7 @@
         class="btn btn-success"
         value="Atualizar Dados"/>
 
-        
+
     </div>
   </div>
 </form>

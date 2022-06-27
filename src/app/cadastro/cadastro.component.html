@@ -1,17 +1,16 @@
 <div class="container">
 <div class="body">
-  <h4>
-  <strong><i class="p-2 text-dark">Cadastro de um Novo Médico</i></strong>
-</h4><hr>
-    <form [formGroup]="formCadastro" (ngSubmit)="onSubmit()">
+  <h3>
+  <strong><i class="p-2 text-dark offset-4">Cadastro de um Novo Médico</i></strong>
+</h3><hr>
+    <form [formGroup]="formCadastro" (ngSubmit)="onSubmit()" class="offset-1">
       <div class="row mb-3"></div>
       <div class="row mb-3"></div>
 
       <div *ngIf="mensagem" class="mb-3 alert alert-primary">
         <strong>{{ mensagem }}</strong>
       </div>
-      <div class="row mb-3">
-        <div class="col-md-1"></div>
+      <div class="row mb-3 ">
 
         <div class="col-md-5">
           <label><strong>Nome do Médico</strong></label>
@@ -31,11 +30,10 @@
           </div>
         </div>
       </div>
-      <div class="row mb-3">
-        <div class="col-md-1"></div>
+      <div class="row mb-3 ">
         <div class="col-md-5">
-          <label><strong>Tel p/ Contato</strong></label>
-          <input type="text" class="form-control" formControlName="telefone" placeholder="(00)00000-0000" maxlength="11"/>
+          <label class="ls-label col-md-3"><b class="ls-label-text">Telefone</b></label>
+          <input type="text" class="form-control ls-mask-phone9_with_ddd" formControlName="telefone" placeholder="(00)00000-0000" maxlength="11"/>
           <div class="text-danger" *ngIf="form.telefone.touched && form.telefone.invalid">
             <span *ngIf="form.telefone.errors.required">
               <strong>Coloque um telefone para registro.</strong>
@@ -43,7 +41,7 @@
           </div>
         </div>
         <div class="col-md-5">
-          <label><strong>Tipo</strong></label>
+          <label class="ls-label col-md-3"><b class="ls-label-text">Tipo</b></label>
           <input type="text" class="form-control" formControlName="tipo" placeholder="Ex. Massoterapeuta"/>
           <div class="text-danger" *ngIf="form.tipo.touched && form.tipo.invalid">
             <span *ngIf="form.tipo.errors.required">

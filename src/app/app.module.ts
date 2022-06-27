@@ -13,6 +13,7 @@ import { ConsultaComponent } from './consulta/consulta.component';
 import { EdicaoComponent } from './edicao/edicao.component';
 import { LoginComponent } from './login/login.component';
 import { environment } from 'src/environments/environment';
+import { EmailComponent } from './email/email.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'edicao/:id_medico', component: EdicaoComponent},
   {path: 'account', component: AccountComponent},
   {path: '', component: LoginComponent},
+  {path: 'email', component: EmailComponent}
 ]
 
 @NgModule({
@@ -31,6 +33,7 @@ const routes: Routes = [
     CadastroComponent,
     AccountComponent,
     LoginComponent,
+    EmailComponent,
 
   ],
   imports: [

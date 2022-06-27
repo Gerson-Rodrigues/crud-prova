@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   url:'http://localhost:8090/api',
-  url_geradora:'http://localhost:8090/jasper'
+  url_geradora:'http://localhost:8090/jasper',
+  email: 'http://localhost:8090/envia-email'
 
 };
 

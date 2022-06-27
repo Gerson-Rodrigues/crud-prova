@@ -8,7 +8,7 @@
         <div class="col-md-4 ">
           <label>Nome </label>&nbsp;
           <br/>
-          <input formControlName="nome" type="text" class="form-control" placeholder="Nome Aqui" maxlength="15" />
+          <input formControlName="nome" type="text" class="form-control" placeholder="Nome Aqui" maxlength="20" />
           <div class="text-danger" *ngIf="form.nome.touched && form.nome.invalid">
             <span *ngIf="form.nome.errors.required">
             <strong>  Por favor, informar o nome do Usuário</strong>
@@ -37,13 +37,14 @@
           <input formControlName="senha" type="password" class="form-control" placeholder="Senha" maxlength="10"/>
           <div class="text-danger" *ngIf="form.senha.touched && form.senha.invalid">
             <span *ngIf="form.senha.errors.required">
-             <strong>Por favor, informar ua senha</strong>
+             <strong>Por favor, informar uma senha</strong>
             </span>
             <span *ngIf="form.senha.errors.minlength">
              <strong>insira um valor minimo de 6</strong> </span>
           </div>
         </div>
-        <div class="d-grid mb-3">
+        <br/>
+        <div class="d-grid mb-3 col-md-5">
           <div *ngIf="menssagem_sucesso" class="mb-3 alert alert-success">
             <strong>{{ menssagem_sucesso }}</strong>
           </div>
