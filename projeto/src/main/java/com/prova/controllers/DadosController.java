@@ -6,7 +6,6 @@ import java.util.Optional;
 
 import javax.transaction.Transactional;
 
-
 import com.prova.entities.Medicos;
 import com.prova.repositories.IDadosRepository;
 import com.prova.requests.DadosGetResponse;
